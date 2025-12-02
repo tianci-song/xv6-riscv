@@ -290,6 +290,8 @@ kfork(void)
 
   safestrcpy(np->name, p->name, sizeof(p->name));
 
+  np->mask = p->mask;	// My add: mask needed when tracing the child process
+
   pid = np->pid;
 
   release(&np->lock);
